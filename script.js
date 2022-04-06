@@ -1,3 +1,5 @@
+"use strict";
+
 const appData = {
   title: "",
   screens: [],
@@ -28,7 +30,6 @@ const appData = {
         "Как назвается этот проект?",
         " КаЛьКулятор Верстки"
       );
-      console.log(appData.title, typeof appData.title);
     } while (appData.title.trim() === "" || appData.isNumber(appData.title));
 
     for (let i = 0; i < 2; i++) {
@@ -55,7 +56,7 @@ const appData = {
       let price = 0;
 
       do {
-        name = prompt("Какой дополнительынй тип услуги нужен");
+        name = prompt("Какой дополнительынй тип услуги нужен", "script");
       } while (name.trim() === "" || appData.isNumber(name));
 
       do {
@@ -127,4 +128,32 @@ const appData = {
   },
 };
 
-appData.start();
+//appData.start();
+
+const elemTitle = document.getElementsByTagName("h1");
+console.log(elemTitle[0]);
+
+const elemBtn = document.getElementsByClassName("handler_btn");
+console.log(elemBtn[0], elemBtn[1]);
+
+const elemScreenBtn = document.querySelector(".screen-btn");
+console.log(elemScreenBtn);
+
+const elemPercent = document.querySelectorAll(".other-items.percent");
+const elemNumber = document.querySelectorAll(".other-items.number");
+console.log(elemPercent);
+console.log(elemNumber);
+
+const inputRollback = document.querySelector(".rollback input[type]");
+console.log(inputRollback);
+
+const spanRange = document.querySelector(".rollback .range-value");
+console.log(spanRange);
+
+const totalInput = document.getElementsByClassName("total-input");
+for (let i = 0; i < totalInput.length; i++) {
+  console.log(totalInput[i]);
+}
+
+let elemScreen = document.querySelectorAll(".screen");
+console.log(elemScreen);
