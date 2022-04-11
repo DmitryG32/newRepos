@@ -44,12 +44,37 @@ const appData = {
 
   //1 задание
   checkSatrt: function () {
-    const select = document.querySelector("select");
-    const input = document.querySelector("input");
-    if (select.value === "" || input.value === "") {
+    const select = document.querySelectorAll(".screen select");
+    const input = document.querySelectorAll(".screen input");
+    let newArr = [];
+    let numCheck;
+
+    select.forEach(function (item) {
+      //все select в массив
+      newArr.push(item);
+    });
+
+    input.forEach(function (item) {
+      //все input в массив
+      newArr.push(item);
+    });
+
+    console.log(newArr);
+
+    newArr.forEach(function (item) {
+      // перебираю массив и если значение пустое то помешаю в переменную
+      if (item.value === "") {
+        numCheck = item.value;
+        console.log(numCheck);
+      }
+    });
+
+    if (numCheck === "") {
       alert("Не выбраны тип или количество экранов");
+      console.log("Прошло в инит");
       appData.init();
     } else {
+      console.log("Прошло в старт");
       appData.start();
     }
   },
