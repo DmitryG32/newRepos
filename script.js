@@ -97,6 +97,8 @@ const appData = {
       CMS.checked = !CMS.checked;
     }
 
+    screens = document.querySelectorAll(".screen");
+
     appData.screens = [];
     appData.screenPrice = 0;
     appData.screenSum = 0;
